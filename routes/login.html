@@ -34,14 +34,16 @@
 
         }
 
-        h1{
+        h1 {
             color: whitesmoke;
             margin-top: 10px;
         }
-        h2{
+
+        h2 {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 40px;
         }
+
         button {
             border: 1px solid green;
             background-color: rgb(73, 145, 73);
@@ -53,7 +55,23 @@
         }
 
         a:hover {
-            color: rgb(221, 180, 76);
+            color: grey;
+        }
+        .u-page {
+            margin-left: 500px;
+            margin-top: 60px;
+            font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        .p-page {
+            margin-left: 500px;
+            font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        .login {
+            margin-left: 660px;
+            margin-top: 20px;
+            background-color: green;
         }
     </style>
 </head>
@@ -79,7 +97,18 @@
         </nav>
     </header>
     <main>
-        <h2>The Log In page!</h2>
+        <h2>Enter Log In Details Below:</h2>
+
+        <form method="POST" action="/logins">
+            <label for="username" class="u-page">Create a username:</label>
+            <input type="text" name="username" />
+            <div id="feedback" class="u-page"></div>
+        
+            <label for="password" class="p-page">Create a password:</label>
+            <input type="password" name="password" />
+            <br>
+            <input type="submit" value="Login" class="login" id="login" />
+        </form>
     </main>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

@@ -56,10 +56,24 @@
         a:hover {
             color: rgb(129, 145, 106);
         }
+        .form-group{
+            padding-left: 530px;
+            margin-top: 25px;
+        }
+        .send{
+            margin-left: 75px;
+            background-color: green;
+        }
+        .feed{
+          margin-left: 75px;
+          color:rgb(23, 199, 23);  
+        }
     </style>
+    
 </head>
 
 <body>
+
     <header id="flex">
         <nav>
             <ul>
@@ -80,8 +94,43 @@
         </nav>
     </header>
     <main>
-        <h2>You can book your Appointment now!</h2>
+        <h2 class="App-detail mt-5">Book An Appointment:</h2><br /><br>
+            
+                <form method="POST" 
+                      action="/termins" 
+                      class="form-group">
+                <div id="feedback mt-2" class="feed"></div><br>
+                     <input type="text"  
+                            name="email" 
+                            id="useremail" 
+                            placeholder="Enter Your Email.."
+                            /><br>
+                     <input type="submit" 
+                            class="send mt-2" value="SEND"/><br>
+                            
+                </form> 
+                     
     </main>
+    <script>
+         var elUseremail = document.getElementById('useremail')
+         var elMsg = document.getElementById('feedback');
+
+         function checkUseremail(minLength) {
+             
+            if (elUseremail.value.length < minLength) {
+                elMsg.innerHTML = 'Email must be ' + minLength + 
+                ' characters or more.';
+            } else {
+                elMsg.innerHTML = '';
+            }  
+        }
+
+        elUseremail.addEventListener('blur', function() {
+            checkUseremail(5);
+        }, false);
+
+         </script>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
